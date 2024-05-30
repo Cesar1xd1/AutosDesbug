@@ -1,0 +1,40 @@
+<div class="container">
+
+    
+
+
+    <table class="table table-striped">
+  <thead>
+
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Modelo</th>
+      <th scope="col">Año</th>
+      <th scope="col">Cilindros</th>
+      <th scope="col">Puertas</th>
+      <th scope="col">Capacidad Lts.</th>
+      <th scope="col">Color</th>
+      <th scope="col">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each autos}}
+    <tr>
+      <td>{{id}}</td>
+      <td>{{precio}}</td>
+      <td>{{modelo}}</td>
+      <td>{{anio}}</td>
+      <td>{{cilindros}}</td>
+      <td>{{puertas}}</td>
+      <td>{{capacidad}}</td>
+      <td>{{color}}</td>
+      <td><a class="btn btn-danger" href="/autos/{{_id}}/delete">eliminar</a> <a class="btn btn-primary" href="/autos/{{_id}}/edit">editar</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+</div>
+
