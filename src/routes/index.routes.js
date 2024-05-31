@@ -1,16 +1,13 @@
 import {Router} from 'express';
-import { deleteAuto, getEditA, insertarAuto, postEditA,renderIndexA,renderTablaA } from '../controllers/auto.controlador';
+import { deleteAuto, getEditA, insertarAuto, postEditA ,renderIndex ,renderTablaA } from '../controllers/auto.controlador';
 import { deleteCliente, getEditC, insertarCliente, postEditC,renderTablaC } from '../controllers/cliente.controlador';
 
 const router = Router();
 //Index
-router.get('/',renderIndexA );
+router.get('/',renderIndex );
 
 router.get('/tabla', renderTablaA);
 router.get('/clientes', renderTablaC);
-
-
-
 //ALTAS
 router.get('/altas',(req,res)=>{
     res.render('altas');

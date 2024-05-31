@@ -4,7 +4,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.renderTabla = exports.renderIndex = exports.postEdit = exports.insertarAuto = exports.getEdit = exports.deleteAuto = void 0;
+exports.renderTablaA = exports.renderIndex = exports.postEditA = exports.insertarAuto = exports.getEditA = exports.deleteAuto = void 0;
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _Auto = _interopRequireDefault(require("../models/Auto"));
@@ -31,7 +31,7 @@ var renderIndex = exports.renderIndex = /*#__PURE__*/function () {
     return _ref.apply(this, arguments);
   };
 }();
-var renderTabla = exports.renderTabla = /*#__PURE__*/function () {
+var renderTablaA = exports.renderTablaA = /*#__PURE__*/function () {
   var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2(req, res) {
     var autos;
     return _regenerator["default"].wrap(function _callee2$(_context2) {
@@ -50,7 +50,7 @@ var renderTabla = exports.renderTabla = /*#__PURE__*/function () {
       }
     }, _callee2);
   }));
-  return function renderTabla(_x3, _x4) {
+  return function renderTablaA(_x3, _x4) {
     return _ref2.apply(this, arguments);
   };
 }();
@@ -110,7 +110,7 @@ var deleteAuto = exports.deleteAuto = /*#__PURE__*/function () {
 }();
 
 //CAMBIO
-var getEdit = exports.getEdit = /*#__PURE__*/function () {
+var getEditA = exports.getEditA = /*#__PURE__*/function () {
   var _ref5 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee5(req, res) {
     var auto;
     return _regenerator["default"].wrap(function _callee5$(_context5) {
@@ -136,11 +136,11 @@ var getEdit = exports.getEdit = /*#__PURE__*/function () {
       }
     }, _callee5, null, [[0, 7]]);
   }));
-  return function getEdit(_x9, _x10) {
+  return function getEditA(_x9, _x10) {
     return _ref5.apply(this, arguments);
   };
 }();
-var postEdit = exports.postEdit = /*#__PURE__*/function () {
+var postEditA = exports.postEditA = /*#__PURE__*/function () {
   var _ref6 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee6(req, res) {
     var id;
     return _regenerator["default"].wrap(function _callee6$(_context6) {
@@ -157,7 +157,7 @@ var postEdit = exports.postEdit = /*#__PURE__*/function () {
       }
     }, _callee6);
   }));
-  return function postEdit(_x11, _x12) {
+  return function postEditA(_x11, _x12) {
     return _ref6.apply(this, arguments);
   };
 }();

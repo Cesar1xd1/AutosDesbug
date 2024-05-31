@@ -6,7 +6,7 @@ export const renderIndex = async (req,res)=>{
     res.render('index',{autos:autos});
 };
 
-export const renderTabla = async (req,res)=>{
+export const renderTablaA = async (req,res)=>{
     const autos =  await Auto.find().lean();
     res.render('tabla',{autos:autos});
 };
@@ -32,7 +32,7 @@ export const deleteAuto = async (req,res)=>{
 };
 
 //CAMBIO
-export const getEdit = async (req,res)=>{
+export const getEditA = async (req,res)=>{
     try {
         const auto = await Auto.findById(req.params.id).lean();
         res.render('edit', {auto});
@@ -40,7 +40,7 @@ export const getEdit = async (req,res)=>{
         console.log(error.message);
     }
 };
-export const postEdit = async (req,res)=>{
+export const postEditA = async (req,res)=>{
     const {id} = req.params
     await Auto.findByIdAndUpdate(id,req.body);
     res.redirect('/tabla');

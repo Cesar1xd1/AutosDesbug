@@ -9,10 +9,9 @@ var _auto = require("../controllers/auto.controlador");
 var _cliente = require("../controllers/cliente.controlador");
 var router = (0, _express.Router)();
 //Index
-router.get('/', _auto.renderIndexA);
+router.get('/', _auto.renderIndex);
 router.get('/tabla', _auto.renderTablaA);
 router.get('/clientes', _cliente.renderTablaC);
-
 //ALTAS
 router.get('/altas', function (req, res) {
   res.render('altas');
