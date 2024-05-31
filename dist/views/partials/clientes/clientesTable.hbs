@@ -1,0 +1,28 @@
+<div class="container">
+    <table class="table table-striped">
+  <thead>
+    
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Correo Electronico</th>
+      <th scope="col">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each clientes}}
+    <tr>
+      <td>{{id}}</td>
+      <td>{{nombre}}</td>
+      <td>{{direccion}}</td>
+      <td>{{correoe}}</td>
+      <td><a class="btn btn-danger" href="/clientes/{{_id}}/deleteC">eliminar</a> <a class="btn btn-primary" href="/clientes/{{_id}}/editC">editar</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+</div>
+

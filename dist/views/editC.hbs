@@ -1,0 +1,34 @@
+<br>
+<div class="container">
+    
+<form class="form" action="/clientes/{{cliente._id}}/editC" method="POST">
+     <div class="mb-3">
+        <label class="form-label" for="id">ID:</label>
+        <input class="form-control" type="number" name="id" id="id" disabled value="{{cliente.id}}">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="nombre">Nombre:</label>
+        <input class="form-control" type="text" name="nombre" id="nombre" value="{{cliente.nombre}}">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="direccion">Direccion:</label>
+        <input class="form-control" type="text" name="direccion" id="direccion" value="{{cliente.direccion}}">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="correoe">Correo Electronico</label>
+        <input class="form-control" type="text" name="correoe" id="correoe" value="{{cliente.correoe}}">
+    </div>
+
+
+    <div class="mb-3">
+        <button class="btn btn-info">Guardar</button>
+    <a class="btn btn-warning" href="/clientes">Regresar</a>
+    </div>  
+    
+
+</form>
+</div>
+

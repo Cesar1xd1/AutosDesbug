@@ -12,32 +12,72 @@
         <input class="form-control" type="number" name="precio" id="precio" value="{{auto.precio}}">
     </div>
 
-     <div class="mb-3">
+    <div class="mb-3">
         <label class="form-label" for="modelo">Modelo:</label>
         <input class="form-control" type="text" name="modelo" id="modelo" value="{{auto.modelo}}">
     </div>
 
-     <div class="mb-3">
+    <div class="mb-3">
         <label class="form-label" for="anio">Año:</label>
-        <input class="form-control" type="number" name="anio" id="anio" value="{{auto.anio}}">
+        <select class="form-control" name="anio" id="anio"></select>
+        <script>
+            (() => {
+                let year_satart = 1990;
+                let year_end = (new Date).getFullYear(); // current year
+                let year_selected = {{auto.anio}};
+                let option = '';
+                for (let i = year_satart; i <= year_end; i++) {
+                    let selected = (i === year_selected ? ' selected' : '');
+                    option += '<option value="' + i + '"' + selected + '>' + i + '</option>';
+                }
+                document.getElementById("anio").innerHTML = option;
+            })();
+        </script>
+        
     </div>
 
-     <div class="mb-3">
+    <div class="mb-3">
         <label class="form-label" for="cilindros">Cilindros:</label>
-        <input class="form-control" type="number" name="cilindros" id="cilindros" value="{{auto.cilindros}}">
+        <select class="form-control" name="cilindros" id="cilindros"></select>
+         <script>
+            (() => {
+                let start = 4;
+                let end = 8;
+                let selectedi = {{auto.cilindros}};
+                let option = '';
+                for (let i = start; i <= end; i= i+2) {
+                    let selected = (i === selectedi ? ' selected' : '');
+                    option += '<option value="' + i + '"' + selected + '>' + i + '</option>';
+                }
+                document.getElementById("cilindros").innerHTML = option;
+            })();
+        </script>
     </div>
 
-     <div class="mb-3">
+    <div class="mb-3">
         <label class="form-label" for="puertas">Puertas:</label>
-        <input class="form-control" type="number" name="puertas" id="puertas" value="{{auto.puertas}}">
+        <select class="form-control" name="puertas" id="puertas"></select>
+        <script>
+            (() => {
+                let start = 2;
+                let end = 4;
+                let selectedi =  {{auto.puertas}};
+                let option = '';
+                for (let i = start; i <= end; i= i+2) {
+                    let selected = (i === selectedi ? ' selected' : '');
+                    option += '<option value="' + i + '"' + selected + '>' + i + '</option>';
+                }
+                document.getElementById("puertas").innerHTML = option;
+            })();
+        </script>
     </div>
 
-     <div class="mb-3">
+    <div class="mb-3">
         <label class="form-label" for="capacidad">Capacidad Lts:</label>
         <input class="form-control" type="number" name="capacidad" id="capacidad" value="{{auto.capacidad}}">
     </div>
 
-     <div class="mb-3">
+    <div class="mb-3">
         <label class="form-label" for="color">Color:</label>
         <input class="form-control" type="text" name="color" id="color" value="{{auto.color}}">
     </div>

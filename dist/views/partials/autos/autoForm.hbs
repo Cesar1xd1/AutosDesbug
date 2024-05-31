@@ -2,12 +2,12 @@
     <form action="/autos/add" method="POST">
     <div class="mb-3">
         <label class="form-label" for="id">ID:</label>
-        <input class="form-control" type="number" name="id" id="id">
+        <input class="form-control" type="number" name="id" id="id" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
     </div>
 
     <div class="mb-3">
         <label class="form-label" for="precio">Precio:</label>
-        <input class="form-control" type="number" name="precio" id="precio">
+        <input class="form-control" type="number" name="precio" id="precio" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
     </div>
 
      <div class="mb-3">
@@ -17,22 +17,62 @@
 
      <div class="mb-3">
         <label class="form-label" for="anio">Año:</label>
-        <input class="form-control" type="number" name="anio" id="anio">
+        <select class="form-control" name="anio" id="anio"></select>
+        <script>
+            (() => {
+                let year_satart = 1990;
+                let year_end = (new Date).getFullYear(); // current year
+                let year_selected = year_end;
+                let option = '';
+                for (let i = year_satart; i <= year_end; i++) {
+                    let selected = (i === year_selected ? ' selected' : '');
+                    option += '<option value="' + i + '"' + selected + '>' + i + '</option>';
+                }
+                document.getElementById("anio").innerHTML = option;
+            })();
+        </script>
+        
     </div>
 
-     <div class="mb-3">
+    <div class="mb-3">
         <label class="form-label" for="cilindros">Cilindros:</label>
-        <input class="form-control" type="number" name="cilindros" id="cilindros">
+        <select class="form-control" name="cilindros" id="cilindros"></select>
+        <script>
+            (() => {
+                let start = 4;
+                let end = 8;
+                let selectedi = start;
+                let option = '';
+                for (let i = start; i <= end; i= i+2) {
+                    let selected = (i === selectedi ? ' selected' : '');
+                    option += '<option value="' + i + '"' + selected + '>' + i + '</option>';
+                }
+                document.getElementById("cilindros").innerHTML = option;
+            })();
+        </script>
     </div>
 
-     <div class="mb-3">
+    <div class="mb-3">
         <label class="form-label" for="puertas">Puertas:</label>
-        <input class="form-control" type="number" name="puertas" id="puertas">
+        <select class="form-control" name="puertas" id="puertas"></select>
+        <script>
+            (() => {
+                let start = 2;
+                let end = 4;
+                let selectedi = end;
+                let option = '';
+                for (let i = start; i <= end; i= i+2) {
+                    let selected = (i === selectedi ? ' selected' : '');
+                    option += '<option value="' + i + '"' + selected + '>' + i + '</option>';
+                }
+                document.getElementById("puertas").innerHTML = option;
+            })();
+        </script>
     </div>
 
      <div class="mb-3">
         <label class="form-label" for="capacidad">Capacidad Lts:</label>
-        <input class="form-control" type="number" name="capacidad" id="capacidad">
+        <input class="form-control" type="number" name="capacidad" id="capacidad" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
     </div>
 
      <div class="mb-3">
@@ -42,11 +82,6 @@
 
     <div class="mb-3"><button class="btn btn-primary">Agregar</button>
     </div>
-    
-    
 </form>
-
-
-
 </div>
 
