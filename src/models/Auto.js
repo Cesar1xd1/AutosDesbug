@@ -3,7 +3,8 @@ import {Schema,model} from 'mongoose';
 const autoSch = new Schema({
     id:{
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     precio:{
         type: String,

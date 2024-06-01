@@ -40,5 +40,9 @@ router.post('/autos/:id/edit', _auto.postEditA);
 router.get('/clientes/:id/editC', _cliente.getEditC);
 router.post('/clientes/:id/editC', _cliente.postEditC);
 
+//Errores
+router.get('/errorAUni', _auto.renderEAU);
+router.get('/errorAEmp', _auto.renderEAE);
+
 //Export
 var _default = exports["default"] = router;

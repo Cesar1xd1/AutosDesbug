@@ -8,7 +8,8 @@ var _mongoose = require("mongoose");
 var autoSch = new _mongoose.Schema({
   id: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   precio: {
     type: String,

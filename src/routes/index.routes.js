@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import { deleteAuto, getEditA, insertarAuto, postEditA ,renderIndex ,renderTablaA } from '../controllers/auto.controlador';
+import { deleteAuto, getEditA, insertarAuto, postEditA ,renderIndex ,renderTablaA,renderEAU ,renderEAE} from '../controllers/auto.controlador';
 import { deleteCliente, getEditC, insertarCliente, postEditC,renderTablaC } from '../controllers/cliente.controlador';
 
 const router = Router();
@@ -38,6 +38,11 @@ router.post('/autos/:id/edit' ,postEditA);
 
 router.get('/clientes/:id/editC', getEditC);
 router.post('/clientes/:id/editC' ,postEditC);
+
+//Errores
+router.get('/errorAUni',renderEAU);
+router.get('/errorAEmp',renderEAE);
+
 
 //Export
 export default router;

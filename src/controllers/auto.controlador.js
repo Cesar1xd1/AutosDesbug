@@ -6,6 +6,16 @@ export const renderIndex = async (req,res)=>{
     res.render('index',{autos:autos});
 };
 
+export const renderEAU = async (req,res)=>{
+    const autos =  await Auto.find().lean();
+    res.render('errorAUni',{autos:autos});
+};
+
+export const renderEAE = async (req,res)=>{
+    const autos =  await Auto.find().lean();
+    res.render('errorAEmp',{autos:autos});
+};
+
 export const renderTablaA = async (req,res)=>{
     const autos =  await Auto.find().lean();
     res.render('tabla',{autos:autos});
@@ -20,7 +30,12 @@ export const insertarAuto = async (req,res)=>{
         const autoadd = await auto.save();
         res.redirect('/tabla');
     } catch (error) {
-        console.log(error);
+        if(error.name == "MongoServerError"){ 
+            res.redirect('/errorAUni');
+        }else if(error.name == "ValidationError"){
+            res.redirect('/errorAEmp');
+        }
+        
     }
 };
 
