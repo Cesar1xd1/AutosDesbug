@@ -3,7 +3,8 @@ import {Schema,model} from 'mongoose';
 const clienteSch = new Schema({
     id:{
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     nombre:{
         type: String,

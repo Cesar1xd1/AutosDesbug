@@ -16,6 +16,11 @@ export const renderEAE = async (req,res)=>{
     res.render('errorAEmp',{autos:autos});
 };
 
+export const rendervalidA = async (req,res)=>{
+    const autos =  await Auto.find().lean();
+    res.render('validAedit',{autos:autos});
+};
+
 export const renderTablaA = async (req,res)=>{
     const autos =  await Auto.find().lean();
     res.render('tabla',{autos:autos});
@@ -57,6 +62,10 @@ export const getEditA = async (req,res)=>{
 };
 export const postEditA = async (req,res)=>{
     const {id} = req.params
-    await Auto.findByIdAndUpdate(id,req.body);
-    res.redirect('/tabla');
+    if(req.body.precio == '' || req.body.modelo == '' ||req.body.capacidad == '' ||req.body.color == ''){
+        res.redirect('/validAedit')
+    }else{
+        await Auto.findByIdAndUpdate(id,req.body);
+        res.redirect('/tabla');
+    }
 };

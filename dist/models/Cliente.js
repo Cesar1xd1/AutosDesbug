@@ -8,7 +8,8 @@ var _mongoose = require("mongoose");
 var clienteSch = new _mongoose.Schema({
   id: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   nombre: {
     type: String,

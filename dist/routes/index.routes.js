@@ -43,6 +43,10 @@ router.post('/clientes/:id/editC', _cliente.postEditC);
 //Errores
 router.get('/errorAUni', _auto.renderEAU);
 router.get('/errorAEmp', _auto.renderEAE);
+router.get('/errorCUni', _cliente.renderECU);
+router.get('/errorCEmp', _cliente.renderECE);
+router.get('/validAedit', _auto.rendervalidA);
+router.get('/validCedit', _cliente.rendervalidC);
 
 //Export
 var _default = exports["default"] = router;

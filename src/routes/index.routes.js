@@ -1,6 +1,6 @@
 import {Router} from 'express';
-import { deleteAuto, getEditA, insertarAuto, postEditA ,renderIndex ,renderTablaA,renderEAU ,renderEAE} from '../controllers/auto.controlador';
-import { deleteCliente, getEditC, insertarCliente, postEditC,renderTablaC } from '../controllers/cliente.controlador';
+import { deleteAuto, getEditA, insertarAuto, postEditA ,renderIndex ,renderTablaA,renderEAU ,renderEAE, rendervalidA} from '../controllers/auto.controlador';
+import { deleteCliente, getEditC, insertarCliente, postEditC,renderTablaC,renderECU ,renderECE, rendervalidC } from '../controllers/cliente.controlador';
 
 const router = Router();
 //Index
@@ -42,6 +42,12 @@ router.post('/clientes/:id/editC' ,postEditC);
 //Errores
 router.get('/errorAUni',renderEAU);
 router.get('/errorAEmp',renderEAE);
+
+router.get('/errorCUni',renderECU);
+router.get('/errorCEmp',renderECE);
+
+router.get('/validAedit',rendervalidA);
+router.get('/validCedit',rendervalidC);
 
 
 //Export

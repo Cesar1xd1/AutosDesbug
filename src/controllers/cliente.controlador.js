@@ -11,6 +11,22 @@ export const renderTablaC = async (req,res)=>{
     res.render('clientes',{clientes:clientes});
 };
 
+export const renderECU = async (req,res)=>{
+    const clientes =  await Cliente.find().lean();
+    res.render('errorCUni',{clientes:clientes});
+};
+
+export const renderECE = async (req,res)=>{
+    const clientes =  await Cliente.find().lean();
+    res.render('errorCEmp',{clientes:clientes});
+};
+
+export const rendervalidC = async (req,res)=>{
+    const clientes =  await Cliente.find().lean();
+    res.render('validCedit',{clientes:clientes});
+};
+
+
 //ALTA
 export const insertarCliente = async (req,res)=>{
     try {
@@ -18,7 +34,11 @@ export const insertarCliente = async (req,res)=>{
         const clienteadd = await cliente.save();
         res.redirect('/clientes');
     } catch (error) {
-        console.log(error);
+        if(error.name == "MongoServerError"){ 
+            res.redirect('/errorCUni');
+        }else if(error.name == "ValidationError"){
+            res.redirect('/errorCEmp');
+        }
     }
 };
 
@@ -40,6 +60,11 @@ export const getEditC = async (req,res)=>{
 };
 export const postEditC = async (req,res)=>{
     const {id} = req.params
-    await Cliente.findByIdAndUpdate(id,req.body);
+    if(req.body.nombre == '' || req.body.direccion == '' || req.body.correoe == ''){
+        res.redirect('/validCedit')
+    }else{
+        await Cliente.findByIdAndUpdate(id,req.body);
     res.redirect('/clientes');
+    }
+    
 };
