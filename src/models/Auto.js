@@ -2,11 +2,15 @@ import {Schema,model} from 'mongoose';
 
 const autoSch = new Schema({
     id:{
-        type: String,
+        type: Number,
         required: true,
         unique: true
     },
     precio:{
+        type: String,
+        required: true,
+    },
+    marca: {
         type: String,
         required: true,
     },

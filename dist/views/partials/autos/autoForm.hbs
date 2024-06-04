@@ -10,7 +10,34 @@
         <input class="form-control" type="number" name="precio" id="precio" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
     </div>
 
-     <div class="mb-3">
+    <div class="mb-3">
+        <label class="form-label" for="marca">Marca::</label>
+        <select class="form-control" name="marca" id="marca"></select>
+        <script>
+            (() => {
+                let carros = ["Volkswagen",
+                            "Toyota",
+                            "Mercedes-Benz",
+                            "Ford",
+                            "General Motors",
+                            "BMW",
+                            "Honda",
+                            "Hyundai",
+                            "Nissan",
+                            "Mazda",
+                            "Chevrolet",
+                            "Kia"];
+                            let option = '';
+                for (let i = 0; i < carros.length; i= i+1) {
+                    option += '<option value="' + carros[i] + '"' + '>' + carros[i] + '</option>';
+                }
+                document.getElementById("marca").innerHTML = option;
+            })();
+        </script>
+    </div>
+
+
+    <div class="mb-3">
         <label class="form-label" for="modelo">Modelo:</label>
         <input class="form-control" type="text" name="modelo" id="modelo">
     </div>
@@ -70,12 +97,12 @@
         </script>
     </div>
 
-     <div class="mb-3">
+    <div class="mb-3">
         <label class="form-label" for="capacidad">Capacidad Lts:</label>
         <input class="form-control" type="number" name="capacidad" id="capacidad" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
     </div>
 
-     <div class="mb-3">
+    <div class="mb-3">
         <label class="form-label" for="color">Color:</label>
         <input class="form-control" type="text" name="color" id="color">
     </div>

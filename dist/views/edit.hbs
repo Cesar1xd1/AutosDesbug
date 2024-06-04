@@ -13,6 +13,34 @@
     </div>
 
     <div class="mb-3">
+        <label class="form-label" for="marca">Marca::</label>
+        <select class="form-control" name="marca" id="marca"></select>
+        <script>
+            (() => {
+                let carros = ["Volkswagen",
+                            "Toyota",
+                            "Mercedes-Benz",
+                            "Ford",
+                            "General Motors",
+                            "BMW",
+                            "Honda",
+                            "Hyundai",
+                            "Nissan",
+                            "Mazda",
+                            "Chevrolet",
+                            "Kia"];
+                            let seleccion = '{{auto.marca}}'; 
+                            let option = '';
+                for (let i = 0; i < carros.length; i= i+1) {
+                    let selected = (carros[i] === seleccion ? ' selected' : '');
+                    option += '<option value="' + carros[i] + '"' + selected + '>' + carros[i] + '</option>';
+                }
+                document.getElementById("marca").innerHTML = option;
+            })();
+        </script>
+    </div>
+
+    <div class="mb-3">
         <label class="form-label" for="modelo">Modelo:</label>
         <input class="form-control" type="text" name="modelo" id="modelo" value="{{auto.modelo}}">
     </div>

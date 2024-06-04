@@ -7,11 +7,15 @@ exports["default"] = void 0;
 var _mongoose = require("mongoose");
 var autoSch = new _mongoose.Schema({
   id: {
-    type: String,
+    type: Number,
     required: true,
     unique: true
   },
   precio: {
+    type: String,
+    required: true
+  },
+  marca: {
     type: String,
     required: true
   },
