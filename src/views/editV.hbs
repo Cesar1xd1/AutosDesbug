@@ -1,0 +1,29 @@
+<br>
+<div class="container">
+    
+<form class="form" action="/vendedores/{{vendedor._id}}/editV" method="POST">
+     <div class="mb-3">
+        <label class="form-label" for="id">ID:</label>
+        <input class="form-control" type="number" name="id" id="id" disabled value="{{vendedor.id}}">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="nombre">Nombre:</label>
+        <input class="form-control" type="text" name="nombre" id="nombre" value="{{vendedor.nombre}}">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="correoe">Correo Electronico</label>
+        <input class="form-control" type="text" name="correoe" id="correoe" value="{{vendedor.correoe}}">
+    </div>
+
+
+    <div class="mb-3">
+        <button class="btn btn-info">Guardar</button>
+    <a class="btn btn-warning" href="/vendedores">Regresar</a>
+    </div>  
+    
+
+</form>
+</div>
+
